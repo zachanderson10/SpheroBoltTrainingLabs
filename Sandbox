@@ -1,0 +1,28 @@
+/**
+ *This program makes the Sphero Bolt do a figure 8.
+ */
+async function Loop1() {
+setSpeed(80)
+await spin(-355, 3)
+await delay(.5)
+}
+/**
+*Loop 1 makes the Sphero Bolt go in nearly a full counter-clockwise circle.
+*/
+async function Loop2(){
+	setSpeed(80)
+await spin(355, 3)
+}
+/**
+*Loop 2 makes it so it goes in another nearly full clockwise circle.
+*/
+async function startProgram(){
+	await Loop1();
+	await Loop2();
+	await Loop1();
+	stopRoll()
+}
+/**
+*This startProgram makes it so Loop1 happens first, then Loop2 occurs, then another Loop1 to make it go in a full figure 8.
+*/
+
